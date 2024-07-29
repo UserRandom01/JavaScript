@@ -74,10 +74,6 @@ p {
     color: var(--clr-red);
 }
 
-.color-black {
-    color: black;
-}
-
 
 
 
@@ -98,27 +94,10 @@ header {
     justify-content: space-between;
     position: sticky;
     top: 0;
-    animation: header-bg linear;
-    animation-timeline: scroll();
-    /* background: var(--clr-white); */
+    background: var(--clr-white);
 
     z-index: 10;
     transition: color 0.5s ease, background-color 0.5s ease;
-}
-
-@keyframes header-bg {
-    24% {
-        background: unset;
-        backdrop-filter: blur(20px);
-    }
-
-    25% {
-        background: var(--clr-white);
-    }
-
-    100% {
-        background: var(--clr-white);
-    }
 }
 
 .header-logo-cnt {
@@ -201,15 +180,18 @@ header {
     position: relative;
     padding-left: 35px;
     border-radius: 6px;
+    background: var(--glassy-bg-clr);
+    transition: all .2s ease;
 }
 
 .nav-ancr:hover {
-    background: var(--glassy-bg-clr);
+    background: var(--js-yellow);
+    color: black;
 }
 
 
 
-.nav-ancr::before {
+/* .nav-ancr::before {
     content: '';
     position: absolute;
     height: 100%;
@@ -221,7 +203,7 @@ header {
     background-size: 50%;
     background-repeat: no-repeat;
     mix-blend-mode: darken;
-}
+} */
 
 
 
@@ -242,18 +224,6 @@ header {
 
 section {
     padding: 12px;
-}
-
-.introbgi-cnt {
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    background: linear-gradient(transparent, rgba(255, 255, 255, 0.5), var(--clr-white)), url(https://i.pinimg.com/originals/f3/dd/5a/f3dd5a82458255bcfa988952d20c45dc.png);
-    background-size: contain;
-    filter: blur(3px);
 }
 
 .main-title {
@@ -315,7 +285,7 @@ section {
     position: fixed;
     bottom: 0;
     width: 100%;
-    transform: translateY(69px);
+    transform: translateY(114px);
     transition: all .3s ease;
 
     width: fit-content;
@@ -360,6 +330,15 @@ section {
     width: 45px;
     height: 45px;
     cursor: pointer;
+    display: grid;
+    place-content: center;
+    margin-bottom: 12px;
+}
+
+
+.notes-cnt a {
+    width: 45px;
+    height: 45px;
     display: grid;
     place-content: center;
 }
