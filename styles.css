@@ -135,12 +135,12 @@ header {
 }
 
 .header-sidebar-cnt {
-    background: rgba(0, 0, 0, 0.701);
     height: 100vh;
     width: 100%;
     position: fixed;
     visibility: hidden;
     overflow-x: hidden;
+    backdrop-filter: brightness(.5) blur(2px);
 }
 
 .header-main-sidebar {
