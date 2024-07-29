@@ -10,12 +10,24 @@
     --clr-white: white;
     --clr-black: black;
     --clr-white-body: white;
+    --clr-red: red;
+
+
+    --clr-code-head: #2F2F2F;
+    --clr-code-head-txt: #B4B4B4;
+    --clr-codered-txt: #f22c3d;
+    --clr-codeblue-txt: #2e95d3;
+    --clr-codegreen-txt: #00a67d;
+
+
+
+
 
     --glassy-bg-clr: rgba(0, 0, 0, 0.1);
 
 
-    transition: color 0.5s ease, background-color 0.5s ease;
-    /* Apply transitions to root variables */
+
+
 }
 
 
@@ -25,6 +37,7 @@
     padding: 0;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
+    user-select: text;
 }
 
 
@@ -44,14 +57,26 @@ a {
     color: unset;
 }
 
-section img {
+.mixbm {
     mix-blend-mode: hard-light;
 }
 
+h3 {
+    color: coral;
+    margin: 12px 0;
+}
 
+p {
+    margin: 8px 0;
+}
 
+.imp {
+    color: var(--clr-red);
+}
 
-
+.color-black {
+    color: black;
+}
 
 
 
@@ -63,6 +88,8 @@ body {
     background: var(--clr-white-body);
     color: var(--clr-black);
     transition: color 0.5s ease, background-color 0.5s ease;
+    max-width: 1800px;
+    margin: auto;
 }
 
 header {
@@ -73,19 +100,24 @@ header {
     top: 0;
     animation: header-bg linear;
     animation-timeline: scroll();
-    background: var(--clr-white);
+    /* background: var(--clr-white); */
 
     z-index: 10;
     transition: color 0.5s ease, background-color 0.5s ease;
 }
 
 @keyframes header-bg {
-    1% {
-        backdrop-filter: blur(3px);
+    24% {
+        background: unset;
+        backdrop-filter: blur(20px);
+    }
+
+    25% {
+        background: var(--clr-white);
     }
 
     100% {
-        backdrop-filter: blur(3px);
+        background: var(--clr-white);
     }
 }
 
@@ -212,6 +244,18 @@ section {
     padding: 12px;
 }
 
+.introbgi-cnt {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: linear-gradient(transparent, rgba(255, 255, 255, 0.5), var(--clr-white)), url(https://i.pinimg.com/originals/f3/dd/5a/f3dd5a82458255bcfa988952d20c45dc.png);
+    background-size: contain;
+    filter: blur(3px);
+}
+
 .main-title {
     font-size: 3em;
     text-align: center;
@@ -236,70 +280,34 @@ section {
 @keyframes sec-head-font {
     10% {
         font-size: .85em;
-        margin-right: 64px;
+        margin-right: 40px;
     }
 
     100% {
         font-size: .85em;
-        margin-right: 64px;
+        margin-right: 40px;
     }
 }
 
-.flexbox {
-    display: flex;
-}
 
-.fleft {
-    width: 40%;
-    padding: 50px;
-}
 
-.fright {
-    width: 60%;
-    padding: 50px;
-}
 
-.expaning-text-cnt {
-    margin-bottom: 2px;
-}
 
-.exp-txt-side-head {
-    cursor: pointer;
-    font-weight: bold;
-    padding: 12px;
-    position: relative;
-}
 
-.exp-txt-side-head::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 45px;
-    background-image: url(assets/expand-button.png);
-    background-size: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: all .3s ease;
-}
 
-.exp-txt-side-head.rotate::after {
-    transform: rotate(180deg);
-}
 
-.exp-txt-cntnt {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
-    box-sizing: border-box;
-    padding: 0 12px;
-}
 
-.exp-txt-cntnt.show {
-    max-height: 200px;
-    /* Adjust this value based on your content */
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -307,8 +315,6 @@ section {
     position: fixed;
     bottom: 0;
     width: 100%;
-    /* padding: 6px; */
-    /* height: 40px; */
     transform: translateY(69px);
     transition: all .3s ease;
 
@@ -329,12 +335,11 @@ section {
     margin: 12px auto;
     display: grid;
     place-content: center;
-    background: var(--glassy-bg-clr);
 
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    background: brown;
+    background: var(--js-yellow);
 }
 
 .footer-heading img {
@@ -357,32 +362,4 @@ section {
     cursor: pointer;
     display: grid;
     place-content: center;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width:550px) {
-    .flexbox {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
-    .fleft,
-    .fright {
-        width: unset;
-        padding: 0;
-    }
 }
