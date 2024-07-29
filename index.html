@@ -21,6 +21,7 @@
 
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="repstyles.css">
 </head>
 
 <body>
@@ -62,18 +63,22 @@
         </div>
     </header>
     <main>
+        <div class="introbgi-cnt">
+
+        </div>
         <section id="introduction">
-            <h1 class="main-title">JavaScript</h1>
-            <h2 class="sec-head">Introduction</h2>
-            <div class="flexbox">
-                <div class="fleft">
+            <h1 class="main-title color-black">JavaScript</h1>
+            <h2 class="sec-head color-black">Introduction</h2>
+            <div class="flexbox flexbox-fd-clm-rev">
+                <div class="fleft flexwid40">
                     <div class="js-intro-img">
-                        <img src="https://www.interviewbit.com/blog/wp-content/uploads/2022/02/Advantages-of-JavaScript-1024x865.png"
-                            alt="">
+                        <img class="mixbm"
+                            src="https://www.interviewbit.com/blog/wp-content/uploads/2022/02/Advantages-of-JavaScript-1024x865.png"
+                            alt="Advantages of JavaScript image">
                     </div>
                 </div>
-                <div class="fright">
-                    <p>
+                <div class="fright flexwid60">
+                    <p class="color-black">
                         JavaScript is a versatile, high-level programming language that is primarily used for enhancing
                         the
                         interactivity and functionality of websites. Initially developed by Netscape in 1995, it has
@@ -134,6 +139,225 @@
                             JavaScript supports object-oriented programming, which means you can create objects to model
                             real-world entities and manage complex data.
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flexbox">
+                <div class="fleft">
+                    <h3>Alert Function</h3>
+                    <p>
+                        The alert function in JavaScript is a simple way to display a message to the user in a dialog
+                        box. It is typically used for debugging purposes or to show important information that the user
+                        needs to acknowledge before continuing.
+                    </p>
+                    <div class="code">
+                        <span class="codered">alert</span>("Hello");
+                    </div>
+                    <img src="https://miro.medium.com/v2/resize:fit:1366/1*QpaoE2OwA1-uRV_8XrZcPg.png"
+                        alt="JavaScript alert function screenshot image">
+                    <p>
+                        When this code is executed, a dialog box will appear with the message "This is an alert
+                        message!" and an "OK" button. The script execution will pause until the user dismisses the alert
+                        by clicking the "OK" button.
+                    </p>
+                </div>
+                <div class="fright">
+                    <h3>Console</h3>
+                    <p>
+                        In JavaScript, the console object provides access to the browser's debugging console. It is a
+                        tool commonly used for logging information, debugging code, and testing. The console object has
+                        several methods, with console.log() being one of the most frequently used.
+                    </p>
+                    <p>
+                        The console.log() method is used to output messages to the web console. It is often used for
+                        debugging purposes, allowing developers to print variables, objects, and other information to
+                        understand the state and flow of the program.
+                    </p>
+                    <div class="code">
+                        <span class="code-cmnt">
+                            You can use console.log() to log the values of variables and objects:
+                        </span><br>
+                        <span class="codeblue">let</span> name = <span class="codegreen">"Sameer"</span>;<br>
+                        <span class="codeblue">let</span> age = <span class="codered">21</span>;<br>
+                        <span class="codeblue">let</span> user = { name: "Bob", age: 25 };<br><br>
+
+                        <span class="codered">console</span>.log(name); // Outputs: Alice <br>
+                        <span class="codered">console</span>.log(age); // Outputs: 30 <br>
+                        <span class="codered">console</span>.log(user); // Outputs: { name: "Bob", age: 25 } <br>
+                    </div>
+                    <div class="ulist">
+                        <div class="ul-title">Common console Methods</div>
+                        <ul>
+                            <li>
+                                console.log(message): Logs a message to the console.
+                            </li>
+                            <li>
+                                console.error(message): Logs an error message.
+                            </li>
+                            <li>
+                                console.warn(message): Logs a warning message.
+                            </li>
+                            <li>
+                                console.info(message): Logs an informational message.
+                            </li>
+                            <li>
+                                console.table(data): Displays tabular data as a table.
+                            </li>
+                            <li>
+                                console.time(label): Starts a timer with a specific labe
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        The console object and its methods, especially console.log(), are invaluable tools for debugging
+                        and understanding the behavior of your code. They provide a straightforward way to track
+                        variables, inspect objects, measure execution time, and more, all from within the development
+                        environment.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="variables">
+            <h2 class="sec-head">Variables</h2>
+            <div class="flexbox">
+                <div class="fleft">
+                    <p>
+                        In JavaScript, variables are used to store data that can be referenced and manipulated within a
+                        program. They act as containers for data values. Variables can store various types of data,
+                        including numbers, strings, objects, arrays, functions, and more.
+                    </p>
+                    <div class="ulist">
+                        <p>In JavaScript, you can declare variables using the var, let, or const keywords:</p>
+                        <ul>
+                            <li>
+                                <b class="imp">var</b>: The var keyword is used to declare a variable. It has function
+                                scope and can be
+                                redeclared.
+                                <div class="code">
+                                    <span class="codeblue">var</span> name = "Alice";<br>
+                                    <span class="codered">console</span>.log(name); <span class="code-cmnt">Outputs:
+                                        Alice </span><br>
+                                    <br>
+                                    <span class="codeblue">var</span> age = 30; <br>
+                                    <span class="codered">console</span>.log(age); <span class="code-cmnt">Outputs:
+                                        30</span>
+
+                                </div>
+                            </li>
+                            <li>
+                                <b class="imp">let</b>: The let keyword is used to declare a block-scoped variable. It
+                                cannot be redeclared
+                                within the same scope.
+                                <div class="code">
+                                    <span class="codeblue">let</span> city = "New York";<br>
+                                    <span class="codered">console</span>.log(city); <span class="code-cmnt">Outputs:
+                                        New York </span><br>
+                                    <br>
+                                    city = "Los Angeles"; <br>
+                                    <span class="codered">console</span>.log(city); <span class="code-cmnt">Outputs:
+                                        Los Angeles</span>
+
+                                </div>
+                            </li>
+                            <li>
+                                <b class="imp">const</b>: The const keyword is used to declare a block-scoped, read-only
+                                constant. The value of a const variable cannot be changed through reassignment.
+                                <div class="code">
+                                    <span class="codeblue">const</span> country = "USA";<br>
+                                    <span class="codered">console</span>.log(country); <span class="code-cmnt">Outputs:
+                                        USA </span><br>
+                                    <br>
+                                    <span class="code-cmnt">
+                                        Attempting to reassign a const variable will result in an error
+                                    </span><br>
+                                    <span class="code-cmnt">
+                                        // country = "Canada"; // Uncaught TypeError: Assignment to constant variable.
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="https://miro.medium.com/v2/resize:fit:1400/1*6-ThlXm6TQUqoZhaD1PwAg.png"
+                        alt="variables image">
+                </div>
+                <div class="fright">
+                    <img src="assets/Varibales image.jpg" alt="Variables declaration image">
+                    <div>
+                        <h3>Varibales Scope</h3>
+                        <p>
+                            The scope of a variable determines where it can be accessed within the code.
+                        </p>
+                        <div class="ulist">
+                            <ul>
+                                <li>
+
+                                    <b class="imp">Global Scope</b>: Variables declared outside of any function or block
+                                    have global scope.
+                                    They can be accessed from anywhere in the code.
+
+                                    <div class="code">
+                                        <span class="codeblue">var</span> globalVar = <span class="codegreen">" I am
+                                            global"</span> ; <br>
+
+                                        <span class="codeblue">function</span> <span class="codered">test</span>() {
+                                        <br>
+                                        <span class="codered codemleft">console</span>.log(globalVar); <span
+                                            class="code-cmnt">Outputs: I am
+                                            global</span> <br>
+                                        } <br>
+
+                                        <span class="codered">test</span>();<br>
+                                        <span class="codered">console</span>.log(globalVar); <span
+                                            class="code-cmnt">Outputs: I am
+                                            global</span>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <b class="imp">Function Scope</b>: Variables declared with var inside a function are
+                                    scoped to that function. They cannot be accessed from outside the function.
+
+                                    <div class="code">
+                                        <b class="codeblue">function</b> <b class="codered">test</b>() { <br>
+                                        <b class="codeblue codemleft">var</b> localVar = <b class="codegreen">"I am
+                                            local"</b>; <br>
+                                        <b class="codered codemleft">console</b>.log(localVar); <b
+                                            class="code-cmnt">Outputs: I am local </b><br>
+                                        } <br><br>
+
+                                        <b class="codered">test</b>(); <br>
+
+                                        <div class="code-cmnt">console.log(localVar); // Uncaught ReferenceError:
+                                            localVar
+                                            is not defined</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <b class="imp">Block Scope</b>: Variables declared with let or const inside a block
+                                    (e.g., inside {}) are scoped to that block.
+
+                                    <div class="code">
+                                        { <br>
+                                        <b class="codeblue codemleft">let</b> blockVar = <b class="codegreen">"I am
+                                            block
+                                            scoped"</b>; <br>
+                                        <b class="codered codemleft">console</b>.log(blockVar); <b class="code-cmnt">
+                                            Outputs: I am block scoped </b><br>
+                                        } <br>
+                                        <b class="code-cmnt"> console.log(blockVar); // Uncaught ReferenceError:
+                                            blockVar is not defined</b>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <h4>Conclusion</h4>
+                        <p>
+                            Variables are fundamental to programming in JavaScript. They are used to store and
+                            manipulate
+                            data, and understanding their behavior, scope, and the differences between var, let, and
+                            const is crucial for writing effective and efficient JavaScript code.
+                        </p>
                     </div>
                 </div>
             </div>
