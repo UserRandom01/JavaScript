@@ -1,0 +1,205 @@
+/* flexbox styles */
+.flexbox {
+    display: flex;
+}
+
+
+.fleft {
+    width: 50%;
+    padding: 50px;
+}
+
+.fright {
+    width: 50%;
+    padding: 50px;
+}
+
+.flexwid40 {
+    width: 40%;
+}
+
+.flexwid60 {
+    width: 60%;
+}
+
+
+
+
+/* expanding text styles */
+.expaning-text-cnt {
+    margin-bottom: 2px;
+}
+
+.exp-txt-side-head {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 12px;
+    position: relative;
+}
+
+.exp-txt-side-head::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 45px;
+    background-image: url(assets/expand-button.png);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all .3s ease;
+}
+
+.exp-txt-side-head.rotate::after {
+    transform: rotate(180deg);
+}
+
+.exp-txt-cntnt {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    box-sizing: border-box;
+    padding: 0 12px;
+}
+
+.exp-txt-cntnt.show {
+    max-height: 200px;
+}
+
+
+
+
+
+
+
+
+
+/* code box styles */
+.code {
+    padding: 12px;
+    border-radius: 0 0 8px 8px;
+    position: relative;
+    margin-top: calc(24px + 12px);
+    margin-bottom: 12px;
+    background: black;
+    color: white;
+    font-size: 14px;
+    line-height: 2em;
+}
+
+.code::before {
+    content: 'Code';
+    background: var(--clr-code-head);
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: -24px;
+    height: 24px;
+    border-radius: 8px 8px 0 0;
+    color: var(--clr-code-head-txt);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    box-sizing: border-box;
+}
+
+.codered {
+    color: var(--clr-codered-txt);
+    font-weight: normal;
+}
+
+.codeblue {
+    color: var(--clr-codeblue-txt);
+    font-weight: normal;
+
+}
+
+.codegreen {
+    color: var(--clr-codegreen-txt);
+    font-weight: normal;
+
+}
+
+.code-cmnt {
+    color: var(--clr-code-head-txt);
+    font-style: italic;
+    font-weight: normal;
+
+}
+
+.code-cmnt::before {
+    content: '//';
+}
+
+.codemleft {
+    margin-left: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ul styles */
+.ulist {
+    /* background: darkblue; */
+}
+
+.ul-title {
+    font-weight: bold;
+}
+
+ul li {
+    /* background: red; */
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:550px) {
+    .flexbox {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flexbox-fd-clm-rev {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .fleft,
+    .fright {
+        width: unset;
+        padding: 0;
+        margin: 12px 0;
+    }
+}
+
+
+@media screen and (max-width:300px) {
+    main {
+        display: none;
+    }
+
+    .header-sidebar-cnt {
+        display: none;
+    }
+}
