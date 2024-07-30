@@ -29,6 +29,8 @@
 
 
 
+
+
     <header>
         <div class="header-logo-cnt">
             <a href="">
@@ -53,6 +55,25 @@
                             d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
                     </svg>
                 </div>
+                <div class="sideber-userDetails-cnt" id="userDetails">
+                    <div class="userIconCnt">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                        </svg>
+                        <div class="profilePicCnt">
+                            <!-- profile picture will be displayed here  -->
+                        </div>
+                    </div>
+                    <div class="userNameandBio">
+                        <div class="editPorfileBtnCnt">
+                            <div class="editProfileBtn">Edit</div>
+                        </div>
+                        <div class="userName">User</div>
+                        <div class="userBio">Bio</div>
+                    </div>
+                </div>
                 <div class="nav-navigators">
                     <nav>
                         <a href="#introduction" class="nav-ancr">Introduction</a>
@@ -60,10 +81,45 @@
                     </nav>
                 </div>
             </div>
-
         </div>
     </header>
     <main>
+        <div class="profileEditingInputsCnt">
+            <div class="profileEditInputsBox">
+                <div class="profileEditInputModalCloseCnt" onclick="closeProfInpMdl()">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                    </svg>
+                </div>
+                <div class="pdinputsHead">Edit Profile</div>
+
+
+                <label for="UserNameInput">
+                    Enter your name:
+                    <input type="text" id="UserNameInput">
+                </label>
+
+                <label for="UserBioInput">
+                    Bio:
+                    <input type="text" id="UserBioInput">
+                </label>
+
+                <label for="profileDpImageInput">
+                    Select profile picture
+                    <input type="file" id="profileDpImageInput" accept=".jpg,.jpeg,.jpe">
+                </label>
+
+                <label for="profileBgImageInput">
+                    Select Background image
+                    <input type="file" id="profileBgImageInput" accept="image/*">
+                </label>
+
+
+                <button class="inputsUpdateBtn" onclick="closeProfInpMdl()">Update</button>
+            </div>
+        </div>
         <section id="introduction">
             <h1 class="main-title">JavaScript</h1>
             <h2 class="sec-head">Introduction</h2>
@@ -224,6 +280,17 @@
                         program. They act as containers for data values. Variables can store various types of data,
                         including numbers, strings, objects, arrays, functions, and more.
                     </p>
+                    <div>
+                        <h3>Variable Rules</h3>
+                        <div class="ulist">
+                            <ul>
+                                <li>Variable names are case sensitive; “a” & “A” is different.</li>
+                                <li>Only letters, digits, underscore( _ ) and $ is allowed. (not even space)</li>
+                                <li>Only a letter, underscore( _ ) or $ should be 1st character.</li>
+                                <li>Reserved words cannot be variable names.</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="ulist">
                         <p>In JavaScript, you can declare variables using the var, let, or const keywords:</p>
                         <ul>
@@ -275,12 +342,13 @@
                             </li>
                         </ul>
                     </div>
-                    <img src="https://miro.medium.com/v2/resize:fit:1400/1*6-ThlXm6TQUqoZhaD1PwAg.png"
-                        alt="variables image">
+                    <img src="assets/Varibales image.jpg" alt="Variables declaration image">
+
                 </div>
                 <div class="fright">
-                    <img src="assets/Varibales image.jpg" alt="Variables declaration image">
                     <div>
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*6-ThlXm6TQUqoZhaD1PwAg.png"
+                            alt="variables image">
                         <h3>Varibales Scope</h3>
                         <p>
                             The scope of a variable determines where it can be accessed within the code.
@@ -349,7 +417,18 @@
                                 </li>
                             </ul>
                         </div>
-                        <h4>Conclusion</h4>
+                        <div>
+                            <p>
+                                <b>var</b>:Variable can be re-declared and updated.A global scope variable.
+                            </p>
+                            <p>
+                                <b>let</b>:Variable cannot be re-declared but can be updated.A block scope variable.
+                            </p>
+                            <p>
+                                <b>const</b>:Variable cannot be re-declared or updated.A block scope variable.
+                            </p>
+                        </div>
+                        <h4>Conclusion:</h4>
                         <p>
                             Variables are fundamental to programming in JavaScript. They are used to store and
                             manipulate
@@ -375,7 +454,7 @@
                     </svg>
                 </div>
                 <div class="notes-cnt">
-                    <a href="https://drive.google.com/drive/folders/1nweZ9gZBRqqgPfdPCLJbJPrfuAARV_8e">
+                    <a target="_blank" href="https://drive.google.com/drive/folders/1nweZ9gZBRqqgPfdPCLJbJPrfuAARV_8e">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                             <path
@@ -386,6 +465,10 @@
             </div>
         </div>
     </footer>
+
+
+
+
 
     <script src="script.js"></script>
     <script src="websitecode.js"></script>
