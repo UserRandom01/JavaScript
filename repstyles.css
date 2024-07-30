@@ -89,20 +89,21 @@
 }
 
 .code::before {
-    content: 'Code';
+    content: 'Javascript';
     background: var(--clr-code-head);
     position: absolute;
     width: 100%;
     left: 0;
-    top: -24px;
+    top: -32px;
     height: 24px;
     border-radius: 8px 8px 0 0;
     color: var(--clr-code-head-txt);
     font-size: 12px;
     display: flex;
     align-items: center;
-    padding-left: 12px;
     box-sizing: border-box;
+    padding: 16px 0;
+    padding-left: 12px;
 }
 
 .codered {
@@ -147,16 +148,14 @@
 
 
 /* ul styles */
-.ulist {
-    /* background: darkblue; */
-}
+
+/* .ulist {} */
 
 .ul-title {
     font-weight: bold;
 }
 
 ul li {
-    /* background: red; */
     margin-left: 20px;
 }
 
@@ -194,6 +193,11 @@ ul li {
 
     .header-main-sidebar {
         width: 240px;
+    }
+
+    .profileEditInputsBox {
+        margin: auto;
+        width: 85%;
     }
 }
 
