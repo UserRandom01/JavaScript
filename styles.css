@@ -37,7 +37,8 @@
     padding: 0;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
-    user-select: text;
+    scroll-behavior: smooth;
+    user-select: none;
 }
 
 
@@ -62,12 +63,16 @@ a {
 }
 
 h3 {
-    color: coral;
     margin: 12px 0;
+    text-decoration: underline;
+}
+
+h3::after {
+    content: ':';
 }
 
 p {
-    margin: 8px 0;
+    margin: 4px 0;
 }
 
 .imp {
@@ -167,6 +172,91 @@ header {
     cursor: pointer;
 }
 
+.sideber-userDetails-cnt {
+    padding: 6px;
+    height: 150px;
+    margin-top: -64px;
+    display: flex;
+    align-items: end;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.85));
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+}
+
+.sideber-userDetails-cnt svg {
+    fill: white;
+}
+
+
+
+
+
+
+
+
+
+
+/* profile container styles */
+.userIconCnt {
+    height: 60px;
+    width: 50px;
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+
+.userIconCnt svg {
+    background: red;
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    padding: 6px;
+}
+
+.profilePicCnt {
+    height: 38px;
+    width: 38px;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.userNameandBio {
+    height: 60px;
+    width: calc(100% - 50px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.userName {
+    font-size: 1.6em;
+    font-weight: 500;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.userBio {
+    font-size: .85em;
+    padding-left: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 160px;
+}
+
+
+
+
+/* nav navigators styles */
 .nav-navigators {
     padding: 12px;
 }
@@ -191,19 +281,6 @@ header {
 
 
 
-/* .nav-ancr::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 35px;
-    left: 0;
-    top: 0;
-    background-image: url(assets/icons8-open-book.gif);
-    background-position: center;
-    background-size: 50%;
-    background-repeat: no-repeat;
-    mix-blend-mode: darken;
-} */
 
 
 
@@ -218,9 +295,9 @@ header {
 
 
 
-
-
-
+main {
+    user-select: text;
+}
 
 section {
     padding: 12px;
@@ -259,6 +336,102 @@ section {
     }
 }
 
+
+
+
+
+
+
+
+
+
+/* profile inputs modal styles */
+.editPorfileBtnCnt {
+    position: absolute;
+    height: 40px;
+    bottom: 0;
+    right: 12px;
+    display: grid;
+    place-content: center;
+    font-size: .85em;
+}
+
+.editPorfileBtnCnt .editProfileBtn {
+    padding: 2px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    background: red;
+}
+
+.profileEditingInputsCnt {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-content: center;
+    backdrop-filter: brightness(.25);
+    display: none;
+}
+
+.profileEditInputsBox {
+    padding: 20px;
+    width: 380px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--clr-white);
+    border-radius: 12px;
+    box-shadow: 0 0 12px;
+}
+
+.profileEditInputModalCloseCnt {
+    height: 35px;
+    width: 35px;
+    display: grid;
+    place-content: center;
+    margin-left: auto;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.pdinputsHead {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 12px 0;
+    width: 100%;
+}
+
+label {
+    width: 100%;
+    margin: 6px;
+    font-size: 14px;
+}
+
+.profileEditInputsBox input {
+    width: 100%;
+    padding: 4px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.profileEditInputsBox input[type=text] {
+    border: 1px solid;
+}
+
+.inputsUpdateBtn {
+    all: unset;
+    padding: 6px;
+    margin: 20px 0 0 0;
+    min-width: 80px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid;
+}
 
 
 
@@ -310,6 +483,7 @@ section {
     width: 40px;
     border-radius: 50%;
     background: var(--js-yellow);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .footer-heading img {
