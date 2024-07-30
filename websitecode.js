@@ -128,3 +128,140 @@ window.addEventListener('load', () => {
     loadTheme();
     document.body.classList.add('loaded');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+// function setBackground(event) {
+//     const file = event.target.files[0];
+//     if (file) {
+//         const reader = new FileReader();
+//         reader.onload = function (e) {
+//             const userDetailsDiv = document.getElementById("userDetails");
+//             userDetailsDiv.style.background = `linear-gradient(transparent,rgba(0,0,0,0.25), rgba(0,0,0,0.85) 80%), url(${e.target.result})`;
+//             userDetailsDiv.style.backgroundSize = 'cover';
+//             userDetailsDiv.style.backgroundPosition = 'center';
+
+//             // Optionally, save the data URL to localStorage to persist the choice
+//             localStorage.setItem('backgroundImageUrl', e.target.result);
+//         }
+//         reader.readAsDataURL(file);
+//     }
+// }
+
+// // Optionally, load the saved background image on page load
+// document.addEventListener("DOMContentLoaded", function () {
+//     const savedImageUrl = localStorage.getItem('backgroundImageUrl');
+//     if (savedImageUrl) {
+//         const userDetailsDiv = document.getElementById("userDetails");
+//         userDetailsDiv.style.background = `linear-gradient(transparent,rgba(0,0,0,0.25), rgba(0,0,0,0.85) 80% ), url(${savedImageUrl})`;
+//         userDetailsDiv.style.backgroundSize = 'cover';
+//         userDetailsDiv.style.backgroundPosition = 'center';
+//     }
+// });
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const editProfileBtn = document.querySelector('.editProfileBtn');
+    const profileEditingInputsCnt = document.querySelector('.profileEditingInputsCnt');
+
+    // Show modal
+    editProfileBtn.addEventListener('click', () => {
+        profileEditingInputsCnt.style.display = 'grid';
+
+        // Populate input fields with current values
+        const userNameDisplay = document.querySelector('.userName').textContent;
+        const userBioDisplay = document.querySelector('.userBio').textContent;
+
+        document.getElementById('UserNameInput').value = userNameDisplay;
+        document.getElementById('UserBioInput').value = userBioDisplay;
+    });
+
+    // Hide modal when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!profileEditingInputsCnt.contains(event.target) && !editProfileBtn.contains(event.target)) {
+            profileEditingInputsCnt.style.display = 'none';
+        }
+    });
+
+    // Your previous JavaScript code here
+    const userNameInput = document.getElementById('UserNameInput');
+    const userBioInput = document.getElementById('UserBioInput');
+    const profileDpImageInput = document.getElementById('profileDpImageInput');
+    const profileBgImageInput = document.getElementById('profileBgImageInput');
+    const updateButton = document.querySelector('.inputsUpdateBtn');
+    const userNameDisplay = document.querySelector('.userName');
+    const userBioDisplay = document.querySelector('.userBio');
+    const profilePicCnt = document.querySelector('.profilePicCnt');
+    const sidebarUserDetailsCnt = document.querySelector('.sideber-userDetails-cnt');
+
+    // Load data from localStorage
+    if (localStorage.getItem('userName')) {
+        userNameDisplay.textContent = localStorage.getItem('userName');
+    }
+
+    if (localStorage.getItem('userBio')) {
+        userBioDisplay.textContent = localStorage.getItem('userBio');
+    }
+
+    if (localStorage.getItem('profilePic')) {
+        profilePicCnt.style.backgroundImage = `url(${localStorage.getItem('profilePic')})`;
+    }
+
+    if (localStorage.getItem('profileBg')) {
+        sidebarUserDetailsCnt.style.backgroundImage = `linear-gradient(transparent, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.85)), url(${localStorage.getItem('profileBg')})`;
+    }
+
+    // Update data
+    updateButton.addEventListener('click', () => {
+        // Update user name and bio
+        const userName = userNameInput.value;
+        const userBio = userBioInput.value;
+
+        userNameDisplay.textContent = userName;
+        userBioDisplay.textContent = userBio;
+
+        localStorage.setItem('userName', userName);
+        localStorage.setItem('userBio', userBio);
+
+        // Update profile picture
+        const profileDpFile = profileDpImageInput.files[0];
+        if (profileDpFile) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const profilePicUrl = e.target.result;
+                profilePicCnt.style.backgroundImage = `url(${profilePicUrl})`;
+                localStorage.setItem('profilePic', profilePicUrl);
+            };
+            reader.readAsDataURL(profileDpFile);
+        }
+
+        // Update background image
+        const profileBgFile = profileBgImageInput.files[0];
+        if (profileBgFile) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const profileBgUrl = e.target.result;
+                sidebarUserDetailsCnt.style.backgroundImage = `linear-gradient(transparent, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.85)), url(${profileBgUrl})`;
+                localStorage.setItem('profileBg', profileBgUrl);
+            };
+            reader.readAsDataURL(profileBgFile);
+        }
+    });
+});
+
+function closeProfInpMdl() {
+    document.querySelector('.profileEditingInputsCnt').style.display = 'none';
+}
