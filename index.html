@@ -22,7 +22,16 @@
 
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="repstyles.css">
+    <link rel="stylesheet" href="stylesrep.css">
+
+
+
+
+
+
+
+    <!-- Prism.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -31,11 +40,11 @@
 
 
 
-    <header>
+    <header class="header">
         <div class="header-logo-cnt">
             <a href="">
                 <img src="assets/vecteezy_javascript-logo-png-javascript-icon-transparent-png_27127463.png"
-                    alt="JavaScript Logo">
+                    alt="JavaScript Logo" loading="lazy">
             </a>
         </div>
         <div class="header-menu-icon">
@@ -48,13 +57,6 @@
         <div class="header-sidebar-cnt">
             <!-- side bar here -->
             <div class="header-main-sidebar">
-                <div class="close-icon-cnt">
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path
-                            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-                    </svg>
-                </div>
                 <div class="sideber-userDetails-cnt" id="userDetails">
                     <div class="userIconCnt">
                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +79,8 @@
                 <div class="nav-navigators">
                     <nav>
                         <a href="#introduction" class="nav-ancr">Introduction</a>
-                        <a href="#variables" class="nav-ancr">Variables </a>
+                        <a href="#variablesAndDataTypes" class="nav-ancr">Variables</a>
+                        <a href="#operators" class="nav-ancr">Operators</a>
                     </nav>
                 </div>
             </div>
@@ -208,7 +211,7 @@
                         <span class="codered">alert</span>("Hello");
                     </div>
                     <img src="https://miro.medium.com/v2/resize:fit:1366/1*QpaoE2OwA1-uRV_8XrZcPg.png"
-                        alt="JavaScript alert function screenshot image">
+                        alt="JavaScript alert function screenshot image" loading="lazy">
                     <p>
                         When this code is executed, a dialog box will appear with the message "This is an alert
                         message!" and an "OK" button. The script execution will pause until the user dismisses the alert
@@ -271,8 +274,8 @@
                 </div>
             </div>
         </section>
-        <section id="variables">
-            <h2 class="sec-head">Variables</h2>
+        <section id="variablesAndDataTypes">
+            <h2 class="sec-head">Variables & Data Types</h2>
             <div class="flexbox">
                 <div class="fleft">
                     <p>
@@ -342,13 +345,12 @@
                             </li>
                         </ul>
                     </div>
-                    <img src="assets/Varibales image.jpg" alt="Variables declaration image">
-
+                    <img src="assets/Varibales image.jpg" alt="Variables declaration image" loading="lazy">
                 </div>
                 <div class="fright">
                     <div>
                         <img src="https://miro.medium.com/v2/resize:fit:1400/1*6-ThlXm6TQUqoZhaD1PwAg.png"
-                            alt="variables image">
+                            alt="variables image" loading="lazy">
                         <h3>Varibales Scope</h3>
                         <p>
                             The scope of a variable determines where it can be accessed within the code.
@@ -438,12 +440,616 @@
                     </div>
                 </div>
             </div>
+            <div class="dataTypesCnt">
+                <h2>Data Types</h2>
+                <p>
+                    A data type in programming is a classification that specifies the type of data that a variable can
+                    hold. It defines the operations that can be performed on the data, the way it is stored, and the way
+                    it behaves in expressions and calculations. Data types are essential in programming because they
+                    help ensure that the data is used in appropriate ways and that the operations on the data are valid.
+                </p>
+                <p>
+                    JavaScript has several built-in data types, which can be broadly categorized into two types:
+                    primitive and non-primitive (object) data types.
+                </p>
+                <div class="flexbox">
+
+                    <div class="fleft">
+                        <div class="ulist">
+                            <div class="ul-title">Primitive Data Types:</div>
+                            <ul>
+                                <li>
+                                    Number: Represents both integer and floating-point numbers.
+
+                                    <div class="code">
+                                        <b class="codeblue">let</b> age = <b class="codered">25</b>;
+                                        <br>
+                                        <b class="codeblue">let</b> temperature = <b class="codered">98.6</b>;
+                                    </div>
+                                </li>
+                                <li>
+                                    String: Represents a sequence of characters.
+
+                                    <div class="code">
+                                        <b class="codeblue">let</b> greeting = <b class="codegreen">"Hello, World!"</b>;
+                                    </div>
+                                </li>
+                                <li>
+                                    Boolean: Represents a logical entity and can have two values: true or false.
+
+                                    <div class="code">
+                                        <b class="codeblue">let</b> isJavaScriptFun = <b class="codeblue">true</b>;
+                                    </div>
+                                </li>
+                                <li>
+                                    Undefined: A variable that has been declared but not assigned a value.
+
+                                    <div class="code">
+                                        <b class="codeblue">let</b> unassignedVariable;
+                                        <br>
+                                        <b class="codered">console</b>.log(unassignedVariable); // Output: undefined
+
+                                    </div>
+                                </li>
+                                <li>
+                                    Null: Represents the intentional absence of any object value. It is a primitive
+                                    value that
+                                    represents the null, empty, or non-existent reference.
+
+                                    <div class="code">
+                                        <b class="codeblue">let</b> emptyValue = <b class="codeblue">null</b>;
+                                    </div>
+                                </li>
+                                <li>
+                                    Symbol: Represents a unique and immutable value and can be used as the key of an
+                                    object
+                                    property.
+
+                                    <div class="code">
+                                        <div class="codeblue">let</div> symbol
+                                        = <div class="codered">Symbol</div>( <div class="codegreen">'description'</div>
+                                        );
+                                    </div>
+                                </li>
+                                <li>
+                                    BigInt: Represents whole numbers larger than the 2^53 - 1 (which is the largest
+                                    number
+                                    JavaScript can reliably represent with the Number primitive).
+
+                                    <div class="code">
+                                        <div class="codeblue">let</div> bigIntNumber = <div class="codered">BigInt</div>
+                                        (123456789012345678901234567890);
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="fright">
+                        <div class="ulist">
+                            <div class="ul-title">Non-Primitive (Object) Data Types:</div>
+                            <ul>
+                                <li>
+                                    Object: Used to store collections of data and more complex entities. Objects can
+                                    contain
+                                    properties and methods.
+
+                                    <div class="code">
+                                        <div class="codeblue">let</div> person = { <br>
+                                        <div class="codered codemleft">name</div>: <div class="codegreen">"Sameer"</div>
+                                        , <br>
+                                        <div class="codered codemleft">age</div>: <div class="codegreen">21</div> <br>
+                                        };
+                                    </div>
+                                </li>
+                                <li>
+                                    Array: A special type of object used to store ordered collections of values.
+
+                                    <div class="code">
+                                        <div class="codeblue">let</div> colors = [ <div class="codegreen">"red",
+                                            "green", "blue"
+                                        </div> ];
+                                    </div>
+                                </li>
+                                <li>
+                                    Function: Objects that can be called to perform actions.
+
+                                    <div class="code">
+                                        <div class="codeblue">function</div>
+                                        <div class="codered">greet</div>() { <br>
+                                        <div class="codeblue codemleft">return</div>
+                                        <div class="codegreen">"Hello!"</div>; <br>
+                                        }
+
+                                    </div>
+                                </li>
+                                <li>
+                                    Date: Represents date and time.
+
+                                    <div class="code">
+                                        <div class="codeblue">let</div> today = <div class="codeblue">new</div>
+                                        <div class="codered">Date</div>();
+                                    </div>
+                                </li>
+                                <li>
+                                    RegExp: Used for matching text with a pattern.
+
+                                    <div class="code">
+                                        <div class="codeblue">let</div> pattern =<div class="codegreen"> /w+/</div>;
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="marginHoriz20px">
+                    <p>Here’s a small example illustrating some of these data types:</p>
+                    <div class="code">
+                        <pre>
+                            <code  class="language-javascript">
+// Primitive data types
+let name = "Alice"; // String
+let age = 25; // Number
+let isStudent = true; // Boolean
+let undefinedVar; // Undefined
+let emptyVar = null; // Null
+let uniqueId = Symbol('id'); // Symbol
+let largeNumber = BigInt(9007199254740991); // BigInt
+
+// Non-primitive (Object) data types
+let person = {
+    name: "Alice",
+    age: 25
+}; // Object
+
+let colors = ["red", "green", "blue"]; // Array
+
+function sayHello() {
+    return "Hello!";
+} // Function
+
+let currentDate = new Date(); // Date
+
+let regex = /hello/i; // RegExp
+
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="operators">
+            <h2 class="sec-head">Operators</h2>
+            <div class="flexbox">
+                <div class="fleft">
+                    <p>
+                        Operators in JavaScript are symbols or keywords used to perform operations on values or
+                        variables. They
+                        help in manipulating data and making decisions based on conditions. JavaScript has several types
+                        of
+                        operators, each serving different purposes.
+                    </p>
+                    <p>
+                        There are primarily 7 types of operators in JavaScript,they are:
+                    </p>
+                    <div class="ulist">
+                        <ul>
+                            <li class="list-navigators">
+                                <a href="#arithmeticOperators">Arithmetic Operators</a>
+                            </li>
+                            <li class="list-navigators">
+                                <a href="#assignmentOperators">Assignment Operators</a>
+                            </li>
+                            <li class="list-navigators">
+                                <a href="#comparisionOperators">Comparison Operators</a>
+                            </li>
+                            <li class="list-navigators">
+                                <a href="#logicalOperators">Logical Operators</a>
+                            </li>
+                            <li class="list-navigators">
+                                <a href="">Conditional (Ternary) Operator</a>
+                            </li>
+                            <li class="list-navigators">
+                                <a href="">Bitwise Operators</a>
+                            </li>
+                            <li class="list-navigators">
+                                <a href="">String Operators</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fright">
+                    <!-- <img src="assets/JavaScript-Operators-Main.png" alt="JavaScript Operators image" loading="lazy"> -->
+                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240104112207/Capture.webp"
+                        alt="JavaScript Operators image" loading="lazy">
+                </div>
+            </div>
+            <div class="arithmeticOperators flexbox scrollMarginTop64 " id="arithmeticOperators">
+                <div class="fleft flexwid45">
+                    <h3 class="afterHeadSideHeading">Arithmetic Operators</h3>
+                    <p>
+                        Arithmetic operators in JavaScript are used to perform basic mathematical operations. Here's a
+                        quick overview of each one:
+                    </p>
+                    <div>
+                        <h4>Addition (+)</h4>
+                        <p>Adds two numbers.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let sum = 5 + 3;  // sum = 8</code></pre>
+                        </div>
+
+                        <h4>Subtraction (-)</h4>
+                        <p>Subtracts one number from another.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let difference = 10 - 4;  // difference = 6</code></pre>
+                        </div>
+
+                        <h4>Multiplication (*)</h4>
+                        <p>Multiplies two numbers.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let product = 6 * 7;  // product = 42</code></pre>
+                        </div>
+
+                        <h4>Division (/)</h4>
+                        <p>Divides one number by another.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let quotient = 20 / 5;  // quotient = 4</code></pre>
+                        </div>
+
+                        <h4>Modulus (%)</h4>
+                        <p>Returns the remainder of a division operation.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let remainder = 10 % 3;  // remainder = 1</code></pre>
+                        </div>
+
+                        <h4>Exponentiation (**)</h4>
+                        <p>Raises a number to the power of another number.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let power = 2 ** 3;  // power = 8 (2^3)</code></pre>
+                        </div>
+
+                        <h4>Increment (++)</h4>
+                        <p>Increases a number by 1.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let count = 5;
+                    count++;  // count = 6</code></pre>
+                        </div>
+
+                        <h4>Decrement (--)</h4>
+                        <p>Decreases a number by 1.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let count = 5;
+                    count--;  // count = 4</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="fright flexwid55 dflexfdcjustcent">
+                    <img src="assets/arithmetic operators img1.jpeg" alt="" class="mixbmDifference" loading="lazy">
+                    <img src="assets/JavaScript-Arithmetic-Operators.png" alt="" class="mixbmDifference" loading="lazy">
+                </div>
+            </div>
+            <div class="assignmentOperators flexbox scrollMarginTop64 " id="assignmentOperators">
+                <div class="fleft flexwid45">
+                    <h3 class="afterHeadSideHeading">Assignment Operators</h3>
+                    <p>
+                        Assignment operators in JavaScript are used to assign values to variables. They can also perform
+                        operations and then assign the result to a variable. Here's an overview of the different
+                        assignment operators:
+                    </p>
+                    <div>
+                        <h4>Assignment (`=`)</h4>
+                        <p>Assigns the right-hand operand's value to the left-hand operand.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let x = 10;  // x = 10</code></pre>
+                        </div>
+
+                        <h4>Addition Assignment (`+=`)</h4>
+                        <p>Adds the right-hand operand to the left-hand operand and assigns the result to the left-hand
+                            operand.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let x = 5;
+x += 3;  // x = 8</code></pre>
+                        </div>
+
+                        <h4>Subtraction Assignment (`-=`)</h4>
+                        <p>Subtracts the right-hand operand from the left-hand operand and assigns the result to the
+                            left-hand operand.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let x = 10;
+x -= 4;  // x = 6</code></pre>
+                        </div>
+
+                        <h4>Multiplication Assignment (`*=`)</h4>
+                        <p>Multiplies the left-hand operand by the right-hand operand and assigns the result to the
+                            left-hand operand.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let x = 6;
+x *= 2;  // x = 12</code></pre>
+                        </div>
+
+                        <h4>Division Assignment (`/=`)</h4>
+                        <p>Divides the left-hand operand by the right-hand operand and assigns the result to the
+                            left-hand operand.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let x = 20;
+x /= 5;  // x = 4</code></pre>
+                        </div>
+
+                        <h4>Modulus Assignment (`%=`)</h4>
+                        <p>Takes the modulus of the left-hand operand by the right-hand operand and assigns the result
+                            to the left-hand operand.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let x = 10;
+x %= 3;  // x = 1</code></pre>
+                        </div>
+
+                        <h4>Exponentiation Assignment (`**=`)</h4>
+                        <p>Raises the left-hand operand to the power of the right-hand operand and assigns the result to
+                            the left-hand operand.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let x = 2;
+x **= 3;  // x = 8</code></pre>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="fright flexwid55 dflexfdcjustcent">
+                    <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Group_103548_3_613f1305e1.png"
+                        alt="" class="mixbmDifference" loading="lazy">
+                    <img src="https://cdn.educba.com/academy/wp-content/uploads/2020/05/Assignment-Operator-in-Java-Script-1.png"
+                        alt="" class="mixbmDifference" loading="lazy">
+                </div>
+            </div>
+            <div class="comparisionOperators flexbox scrollMarginTop64 " id="comparisionOperators">
+                <div class="fleft flexwid45">
+                    <h3 class="afterHeadSideHeading">Comparison Operators</h3>
+                    <p>
+                        Comparison operators in JavaScript are used to compare two values and return a boolean result
+                        (true or false). Here’s a breakdown of each comparison operator:
+                    </p>
+                    <div>
+                        <h4>Equal to (`==`)</h4>
+                        <p>Compares two values for equality, performing type coercion if necessary.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = 5;
+let b = '5';
+console.log(a == b);  // true</code></pre>
+                        </div>
+
+                        <h4>Strict Equal to (`===`)</h4>
+                        <p>Compares two values for equality without performing type coercion. Both the value and type
+                            must be the same.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = 5;
+let b = '5';
+console.log(a === b);  // false</code></pre>
+                        </div>
+
+                        <h4>Not Equal to (`!=`)</h4>
+                        <p>Compares two values for inequality, performing type coercion if necessary.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = 5;
+let b = '6';
+console.log(a != b);  // true</code></pre>
+                        </div>
+
+                        <h4>Strict Not Equal to (`!==`)</h4>
+                        <p>Compares two values for inequality without performing type coercion. Both the value and type
+                            must be different.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = 5;
+let b = '5';
+console.log(a !== b);  // true</code></pre>
+                        </div>
+
+                        <h4>Greater Than (`>`) </h4>
+                        <p>Checks if the left-hand operand is greater than the right-hand operand.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = 10;
+let b = 5;
+console.log(a > b);  // true</code></pre>
+                        </div>
+
+                        <h4>Greater Than or Equal to (`>=`)</h4>
+                        <p>Checks if the left-hand operand is greater than or equal to the right-hand operand.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = 10;
+let b = 10;
+console.log(a >= b);  // true</code></pre>
+                        </div>
+
+                        <h4>Less Than (`<`)< /h4>
+                                <p>Checks if the left-hand operand is less than the right-hand operand.</p>
+                                <div class="code">
+                                    <pre><code class="language-javascript">let a = 5;
+let b = 10;
+console.log(a < b);  // true</code></pre>
+                                </div>
+
+                                <h4>Less Than or Equal to (`<=`)< /h4>
+                                        <p>Checks if the left-hand operand is less than or equal to the right-hand
+                                            operand.</p>
+                                        <div class="code">
+                                            <pre><code class="language-javascript">let a = 5;
+let b = 10;
+console.log(a <= b);  // true</code></pre>
+                                        </div>
+
+                                        <h4>Example Combining Comparison Operators</h4>
+                                        <div class="code">
+                                            <pre><code class="language-javascript">let a = 10;
+let b = 5;
+
+console.log(a == 10);   // true
+console.log(a === '10');  // false
+console.log(a != b);    // true
+console.log(a !== 5);   // false
+console.log(a > b);     // true
+console.log(a >= 10);   // true
+console.log(a < b);     // false
+console.log(a <= 10);   // true</code></pre>
+                                        </div>
+                    </div>
+                </div>
+                <div class="fright flexwid55 dflexfdcjustcent">
+                    <img src="https://media.dev.to/cdn-cgi/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fb6ifcyworbv20ycx72ha.jpeg"
+                        alt="" class="mixbmDifference" loading="lazy">
+                    <img src="https://chunxuchai.wordpress.com/wp-content/uploads/2019/05/comparison-operator.jpg"
+                        alt="" class="mixbmDifference">
+                    <img src="https://miro.medium.com/v2/resize:fit:1400/1*A_0LHqmZzXRkm0i1eBz-Lg.jpeg" alt=""
+                        class="mixbmDifference" loading="lazy">
+
+                </div>
+            </div>
+            <div class="logicalOperators flexbox scrollMarginTop64 " id="logicalOperators">
+                <div class="fleft flexwid45">
+                    <h3 class="afterHeadSideHeading">Logical Operators</h3>
+                    <p>
+                        Logical operators in JavaScript are used to combine multiple boolean expressions and return a
+                        boolean result. Here’s a breakdown of each logical operator:
+                    </p>
+                    <div>
+                        <h4>Logical AND (`&&`)</h4>
+                        <p>Returns <code>true</code> if both operands are <code>true</code>. If the first operand is
+                            <code>false</code>, it returns <code>false</code> without evaluating the second operand
+                            (short-circuit evaluation).
+                        </p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = true;
+let b = false;
+console.log(a && b);  // false</code></pre>
+                        </div>
+
+                        <h4>Logical OR (`||`)</h4>
+                        <p>Returns <code>true</code> if at least one of the operands is <code>true</code>. If the first
+                            operand is <code>true</code>, it returns <code>true</code> without evaluating the second
+                            operand (short-circuit evaluation).</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = true;
+let b = false;
+console.log(a || b);  // true</code></pre>
+                        </div>
+
+                        <h4>Logical NOT (`!`)</h4>
+                        <p>Returns <code>true</code> if the operand is <code>false</code>, and <code>false</code> if the
+                            operand is <code>true</code>. It negates the boolean value of the operand.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = true;
+console.log(!a);  // false</code></pre>
+                        </div>
+
+                        <h4>Logical AND with Assignment (`&&=`)</h4>
+                        <p>Logical AND combined with assignment. Assigns the right-hand operand to the left-hand operand
+                            only if the left-hand operand is <code>true</code>.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = true;
+let b = false;
+a &&= b;
+console.log(a);  // false</code></pre>
+                        </div>
+
+                        <h4>Logical OR with Assignment (`||=`)</h4>
+                        <p>Logical OR combined with assignment. Assigns the right-hand operand to the left-hand operand
+                            only if the left-hand operand is <code>false</code>.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = false;
+let b = true;
+a ||= b;
+console.log(a);  // true</code></pre>
+                        </div>
+
+                        <h4>Logical Nullish Coalescing with Assignment (`??=`)</h4>
+                        <p>Logical nullish coalescing combined with assignment. Assigns the right-hand operand to the
+                            left-hand operand only if the left-hand operand is <code>null</code> or
+                            <code>undefined</code>.
+                        </p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = null;
+let b = 'default';
+a ??= b;
+console.log(a);  // 'default'</code></pre>
+                        </div>
+
+                        <h4>Example Combining Logical Operators</h4>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = true;
+let b = false;
+let c = null;
+
+console.log(a && b);  // false
+console.log(a || b);  // true
+console.log(!a);      // false
+console.log(a &&= b); // false
+console.log(c ||= 'default');  // 'default'
+console.log(c ??= 'new default');  // 'default' (unchanged)</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="fright flexwid55 dflexfdcjustcent">
+                    <img src="https://media.licdn.com/dms/image/D4D12AQGdZMI--2VQwg/article-cover_image-shrink_720_1280/0/1679701051705?e=2147483647&v=beta&t=dCerQCoDuo9JkE_w2X2lSZxb8cCjShZbTZYVRAToITM"
+                        alt="" class="mixbmDifference" loading="lazy">
+                    <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--xttyf7r3--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://cl.ly/7d9cf8370380/Image%25202018-11-15%2520at%25209.59.47%2520AM.png"
+                        alt="" class="mixbmDifference" loading="lazy">
+                    <img src="assets/Logical-operators-image1.png" alt="" class="mixbmDifference" loading="lazy">
+                </div>
+            </div>
+            <div class="ternaryOperators flexbox scrollMarginTop64 " id="ternaryOperators">
+                <div class="fleft flexwid45">
+                    <h3 class="afterHeadSideHeading">Ternary Operators</h3>
+                    <p>
+                        The ternary operator in JavaScript is a conditional operator that provides a shorthand way to
+                        perform conditional logic. It is the only operator in JavaScript that takes three operands,
+                        hence the name "ternary." Here's how it works:
+                    </p>
+                    <div>
+                        <h4>Ternary Operator (`? :`)</h4>
+                        <p>The ternary operator is a shorthand for the <code>if-else</code> statement. It evaluates a
+                            condition and returns one of two values based on whether the condition is <code>true</code>
+                            or <code>false</code>.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let age = 18;
+let isAdult = (age >= 18) ? 'Yes, adult' : 'No, not an adult';
+console.log(isAdult);  // 'Yes, adult'</code></pre>
+                        </div>
+
+                        <h4>Nesting Ternary Operators</h4>
+                        <p>You can nest ternary operators to handle more complex conditions. Each ternary operator is
+                            evaluated in order.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let score = 85;
+let grade = (score >= 90) ? 'A' :
+            (score >= 80) ? 'B' :
+            (score >= 70) ? 'C' : 'F';
+console.log(grade);  // 'B'</code></pre>
+                        </div>
+
+                        <h4>Example Combining Ternary Operators</h4>
+                        <p>Combining multiple ternary operators can help simplify conditional logic in some cases.</p>
+                        <div class="code">
+                            <pre><code class="language-javascript">let a = 10;
+let b = 20;
+let result = (a > b) ? 'a is greater than b' :
+            (a < b) ? 'a is less than b' : 'a is equal to b';
+console.log(result);  // 'a is less than b'</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="fright flexwid55 dflexfdcjustcent">
+                    <img src="https://media.dev.to/cdn-cgi/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Frn8ecbvghqyulclj0m42.png"
+                        alt="" class="mixbmDifference" loading="lazy">
+                </div>
+            </div>
         </section>
     </main>
     <footer>
         <div class="footer-cnt">
             <div class="footer-heading">
-                <img src="assets/expand-button.png" alt="">
+                <img src="assets/expand-button.png" alt="" loading="lazy">
             </div>
             <div class="footer-stng-cnt">
                 <div class="theme-changer">
@@ -471,7 +1077,15 @@
 
 
     <script src="script.js"></script>
-    <script src="websitecode.js"></script>
+    <script src="scriptWeb.js"></script>
+
+
+
+
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-javascript.min.js"></script>
+
 </body>
 
 </html>
