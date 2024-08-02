@@ -62,6 +62,10 @@ a {
     mix-blend-mode: hard-light;
 }
 
+.mixbmDifference {
+    mix-blend-mode: difference;
+}
+
 h3 {
     margin: 12px 0;
     text-decoration: underline;
@@ -73,14 +77,29 @@ h3::after {
 
 p {
     margin: 4px 0;
+    user-select: text;
 }
 
 .imp {
     color: var(--clr-red);
 }
 
+.marginHoriz20px {
+    margin: auto 20px;
+}
 
+.scrollMarginTop64 {
+    scroll-margin-top: 64px;
+}
 
+.afterHeadSideHeading {
+    background: var(--clr-white-body);
+    position: sticky;
+    top: 64px;
+    z-index: 1;
+    padding: 6px 0;
+    text-decoration: none;
+}
 
 
 
@@ -157,27 +176,22 @@ header {
     background: var(--clr-white);
 }
 
-.close-icon-cnt {
-    height: 64px;
-    width: 64px;
-    display: grid;
-    place-content: center;
-    margin-left: auto;
-}
 
-.close-icon-cnt svg {
-    height: 47px;
-    width: 47px;
-    padding: 12px;
-    cursor: pointer;
-}
+
+
+
+
+
+
+
+/* profile container styles */
 
 .sideber-userDetails-cnt {
     padding: 6px;
     height: 150px;
-    margin-top: -64px;
     display: flex;
     align-items: end;
+    align-items: last baseline;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.85));
     background-position: center;
     background-size: cover;
@@ -189,16 +203,6 @@ header {
     fill: white;
 }
 
-
-
-
-
-
-
-
-
-
-/* profile container styles */
 .userIconCnt {
     height: 60px;
     width: 50px;
@@ -243,6 +247,7 @@ header {
     line-height: 24px;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-wrap: nowrap;
 }
 
 .userBio {
@@ -250,7 +255,7 @@ header {
     padding-left: 2px;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 160px;
+    text-wrap: nowrap;
 }
 
 
@@ -317,8 +322,7 @@ section {
     z-index: 100;
     width: fit-content;
     margin: auto;
-
-
+    transition: all 0s;
     animation: sec-head-font linear;
     animation-timeline: view();
     animation-range-start: 100vh;
@@ -336,6 +340,9 @@ section {
     }
 }
 
+.dataTypesCnt {
+    margin: 20px;
+}
 
 
 
@@ -349,8 +356,8 @@ section {
 .editPorfileBtnCnt {
     position: absolute;
     height: 40px;
-    bottom: 0;
-    right: 12px;
+    top: 0;
+    right: 6px;
     display: grid;
     place-content: center;
     font-size: .85em;
@@ -372,7 +379,7 @@ section {
     left: 0;
     display: grid;
     place-content: center;
-    backdrop-filter: brightness(.25);
+    backdrop-filter: brightness(0.025);
     display: none;
 }
 
@@ -385,7 +392,7 @@ section {
     align-items: center;
     background: var(--clr-white);
     border-radius: 12px;
-    box-shadow: 0 0 12px;
+    position: relative;
 }
 
 .profileEditInputModalCloseCnt {
@@ -393,9 +400,11 @@ section {
     width: 35px;
     display: grid;
     place-content: center;
-    margin-left: auto;
     border-radius: 50%;
     cursor: pointer;
+    position: absolute;
+
+    right: 12px;
 }
 
 .pdinputsHead {
@@ -416,10 +425,12 @@ label {
     padding: 4px;
     font-size: 16px;
     border-radius: 4px;
+    background: var(--clr-white);
 }
 
 .profileEditInputsBox input[type=text] {
     border: 1px solid;
+    color: var(--clr-black);
 }
 
 .inputsUpdateBtn {
@@ -430,9 +441,15 @@ label {
     text-align: center;
     cursor: pointer;
     border-radius: 4px;
-    border: 1px solid;
+    background: red;
+    color: white;
+    transition: all .2s ease;
 }
 
+.inputsUpdateBtn:active {
+    background: var(--clr-codeblue-txt);
+    scale: .9;
+}
 
 
 
@@ -462,6 +479,7 @@ label {
     transition: all .3s ease;
 
     width: fit-content;
+    z-index: 1;
     right: 6px;
 }
 
