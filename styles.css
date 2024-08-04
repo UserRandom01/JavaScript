@@ -414,6 +414,17 @@ section {
     width: 100%;
 }
 
+.userProfInpTextCnt {
+    width: 100%;
+    position: relative;
+    margin: 12px;
+}
+
+.userProfInpTextCnt input {
+    margin: 0;
+}
+
+
 label {
     width: 100%;
     margin: 6px;
@@ -443,7 +454,7 @@ label {
     border-radius: 4px;
     background: red;
     color: white;
-    transition: all .2s ease;
+    transition: all .15s ease;
 }
 
 .inputsUpdateBtn:active {
@@ -452,6 +463,37 @@ label {
 }
 
 
+.userProfInpTextCnt {
+    margin: 8px;
+}
+
+.userProfInpTextCnt label {
+    position: absolute;
+    left: -2px;
+    width: fit-content;
+    padding: 0 4px;
+    transition: all 0.2s linear;
+    height: 80%;
+    top: -2px;
+    display: grid;
+    place-content: center;
+    background: var(--clr-white);
+    padding-left: 10px;
+}
+
+.userProfInpTextCnt input {
+    padding: 8px;
+}
+
+.userProfInpTextCnt input:focus+label {
+    transform: translatey(-70%);
+    height: unset;
+    top: -2px;
+    left: 0;
+    padding-left: 0;
+    padding: 0 4px;
+    font-size: .7em;
+}
 
 
 
