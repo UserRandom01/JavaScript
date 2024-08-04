@@ -469,24 +469,26 @@ label {
 
 .userProfInpTextCnt label {
     position: absolute;
-    left: -2px;
-    width: fit-content;
     padding: 0 4px;
     transition: all 0.2s linear;
-    height: 80%;
-    top: -2px;
-    display: grid;
-    place-content: center;
+    height: 90%;
+    top: -10%;
+    left: 0;
+    width: 97%;
+    display: flex;
+    align-items: center;
     background: var(--clr-white);
     padding-left: 10px;
 }
 
 .userProfInpTextCnt input {
     padding: 8px;
+    position: relative;
 }
 
 .userProfInpTextCnt input:focus+label {
     transform: translatey(-70%);
+    width: fit-content;
     height: unset;
     top: -2px;
     left: 0;
